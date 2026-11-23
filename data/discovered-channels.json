@@ -1,5 +1,5 @@
 {
-  "queryIndex": 3,
+  "queryIndex": 4,
   "channels": {
     "UCldScWaC5wcLM-xrS2YmWxw": {
       "channelId": "UCldScWaC5wcLM-xrS2YmWxw",
@@ -36,6 +36,15 @@
       "subs": 348000,
       "category": "tech",
       "addedAt": "2026-11-23T10:18:01.087Z"
+    },
+    "UCiMeiRC3AViQ6RffFvLrpaw": {
+      "channelId": "UCiMeiRC3AViQ6RffFvLrpaw",
+      "title": "CSS Online with Nearpeer",
+      "thumb": "https://yt3.ggpht.com/ytc/AIdro_k3wWcxJvXRQTiKMxojvrFkCU0O7PjrJgI2yioc_cTRhA=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UUiMeiRC3AViQ6RffFvLrpaw",
+      "subs": 99000,
+      "category": "other",
+      "addedAt": "2026-11-23T18:18:23.852Z"
     }
   }
 }
