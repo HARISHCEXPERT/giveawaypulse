@@ -1,0 +1,41 @@
+# Naya giveaway page banane ke liye (English + Hindi dono page apne aap banenge):
+# 1. Is file ki copy banao, naam do jaise:  carryminati-ps5-giveaway.txt
+#    (yahi naam page ka link banega: website.com/g/carryminati-ps5-giveaway.html)
+# 2. Neeche ki jaankari bharo — SIRF wahi jo creator ne video/description mein bataya hai.
+# 3. Save karke GitHub par daal do. Page apne aap ban jayega + Telegram alert jayega.
+# "#" se shuru hone wali lines ignore hoti hain. "_" se shuru hone wali files bhi.
+
+title: PS5 Giveaway – CarryMinati
+# Hindi page ke liye (optional — khaali chhodoge to English wala use hoga)
+title_hi: PS5 Giveaway – CarryMinati
+channel: CarryMinati
+channel_link: https://www.youtube.com/@CarryMinati
+video: https://www.youtube.com/watch?v=VIDEO_ID
+inaam: PlayStation 5 (1 winner)
+inaam_hi: PlayStation 5 (1 विजेता)
+last_date: 30-12-2026
+category: gaming
+
+# Sirf members ke liye ho to "haan" likho, warna khaali chhod do
+members_only:
+join_link:
+
+# English mein steps (English page ke liye)
+kaise_participate:
+- Subscribe to the channel
+- Comment your name on the video
+- Winner will be announced in the next video
+
+# Hindi mein steps (Hindi page ke liye, optional)
+kaise_participate_hi:
+- चैनल को सब्सक्राइब करें
+- वीडियो पर अपना नाम लिखकर कमेंट करें
+- विजेता का नाम अगली वीडियो में घोषित होगा
+
+# Extra jaankari (ek line), khaali chhod sakte ho
+note:
+note_hi:
+
+# Winner announce hone ke baad yahan naam daalo (sirf naam/YouTube handle, phone number KABHI nahi)
+winners:
+winners_video:

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hi" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Giveaway Pulse – YouTube के सभी चालू Giveaways एक जगह</title>
+<meta name="description" content="बड़े भारतीय YouTubers के सभी चालू giveaways एक जगह – iPhone, PS5, लैपटॉप और भी बहुत कुछ। आख़िरी तारीख़, कैसे हिस्सा लें और विजेताओं की सूची। हर घंटे अपडेट।">
+<meta name="theme-color" content="#05080a">
+<link rel="canonical" href="https://giveawaypulse.com/hi/">
+<link rel="alternate" hreflang="en" href="https://giveawaypulse.com/">
+<link rel="alternate" hreflang="hi" href="https://giveawaypulse.com/hi/">
+<link rel="alternate" hreflang="x-default" href="https://giveawaypulse.com/">
+<meta property="og:title" content="Giveaway Pulse – YouTube के सभी चालू Giveaways एक जगह">
+<meta property="og:description" content="बड़े भारतीय YouTubers के सभी चालू giveaways एक जगह – iPhone, PS5, लैपटॉप और भी बहुत कुछ। आख़िरी तारीख़, कैसे हिस्सा लें और विजेताओं की सूची। हर घंटे अपडेट।">
+<meta property="og:url" content="https://giveawaypulse.com/hi/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="../hi/"><i></i>Giveaway <b>Pulse</b></a>
+  <nav class="lang" aria-label="Language">
+    <a href="../" hreflang="en">EN</a><a href="../hi/" hreflang="hi" class="on" aria-current="true">हिंदी</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>हर चालू <b>giveaway</b>, एक रडार पर</h1>
+  <p>हम हर घंटे बड़े YouTube चैनल स्कैन करते हैं ताकि आपसे कोई giveaway न छूटे। इनाम, आख़िरी तारीख़ और हिस्सा लेने का तरीका देखने के लिए किसी बिंदु पर टैप करें।</p>
+  <div class="modes" role="tablist">
+    <button class="mode on" data-mode="yt" role="tab"><span class="dot"></span>▶ YouTube</button>
+    <button class="mode saas" data-mode="saas" role="tab"><span class="dot"></span>💻 SaaS</button>
+  </div>
+</section>
+
+<div class="radar-wrap">
+  <div class="radar scanning" id="radar">
+    <div class="ring" style="--i:12%"></div><div class="ring" style="--i:25%"></div><div class="ring" style="--i:38%"></div>
+    <div class="axis h"></div><div class="axis v"></div>
+    <div class="sweep"></div>
+    <div id="blips"></div>
+    <div class="center"></div>
+    <div class="status" id="rstatus"></div>
+  </div>
+  <div class="legend"><span style="--c:#2bff88">नया giveaway</span><span style="--c:#ffc53d">फ़ीचर्ड</span><span style="--c:#86a39a">जानकारी के लिए बिंदु पर टैप करें</span></div>
+  <div class="stats" id="stats"></div>
+  <div class="cta-row">
+    <a class="pill tg" id="tgLink" href="#" target="_blank" rel="noopener" hidden>✈️ Telegram पर अलर्ट पाएँ</a>
+    <a class="pill" id="sugLink" href="#" target="_blank" rel="noopener" hidden>➕ चैनल सुझाएँ</a>
+  </div>
+</div>
+
+<div class="soon" id="soon">
+  <h3>SaaS giveaways जल्द आ रहे हैं 🚀</h3>
+  <p>सॉफ़्टवेयर बनाने वालों से फ़्री लाइसेंस, लाइफ़टाइम डील और क्रेडिट्स। आप SaaS बना रहे हैं? अपना giveaway यहाँ डालें और असली यूज़र्स पाएँ।</p>
+  <a class="btn-saas" id="saasLink" href="#" target="_blank" rel="noopener">अपना SaaS giveaway भेजें</a>
+</div>
+
+<div id="listArea">
+  <div class="list-head">
+    <h2>सभी giveaways</h2>
+    <div class="filters">
+      <button class="chip on" data-c="all">सभी</button>
+      <button class="chip" data-c="tech">📱 टेक</button>
+      <button class="chip" data-c="gaming">🎮 गेमिंग</button>
+      <button class="chip" data-c="global">🌍 ग्लोबल</button>
+      <button class="chip" data-c="other">➕ अन्य</button>
+      <button class="chip" data-c="winners">🏆 विजेता</button>
+    </div>
+    <div class="tools">
+      <input type="search" id="q" placeholder="iPhone, PS5, चैनल का नाम…">
+      <label><input type="checkbox" id="showEnded"> ख़त्म हुए भी दिखाएँ</label>
+      <label><input type="checkbox" id="showReview"> अनवेरिफ़ाइड भी दिखाएँ</label>
+    </div>
+  </div>
+  <main class="list" id="list"><div class="empty">…</div></main>
+</div>
+
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="grab"></div><button class="x" id="sheetX" aria-label="Close">✕</button>
+  <div class="thumb" id="sheetThumb"></div>
+  <div class="body" id="sheetBody"></div>
+</div>
+
+<footer>
+  <p>Giveaway Pulse भारत और दुनिया के बड़े YouTube creators के चालू giveaways ट्रैक करता है – फ़ोन, कंसोल, लैपटॉप, गैजेट्स और भी बहुत कुछ। हम इनाम, आख़िरी तारीख़, हिस्सा लेने का तरीका और घोषित विजेताओं की जानकारी देते हैं, और हमेशा creator की ऑफ़िशियल वीडियो का लिंक देते हैं।</p>
+  <p>⚠️ हम किसी भी giveaway के आयोजक नहीं हैं। असली giveaway कभी पैसे, OTP या Telegram/WhatsApp पर संपर्क नहीं माँगता।</p>
+</footer>
+<noscript><p style="text-align:center">चालू giveaways देखने के लिए JavaScript चालू करें।</p></noscript>
+<script src="../assets/app.js"></script>
+</body>
+</html>
