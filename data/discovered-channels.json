@@ -1,5 +1,5 @@
 {
-  "queryIndex": 1,
+  "queryIndex": 2,
   "channels": {
     "UCldScWaC5wcLM-xrS2YmWxw": {
       "channelId": "UCldScWaC5wcLM-xrS2YmWxw",
@@ -18,6 +18,24 @@
       "subs": 98600,
       "category": "gaming",
       "addedAt": "2026-11-23T10:17:03.948Z"
+    },
+    "UCyjpVohwe6mshKc-XH6XMWw": {
+      "channelId": "UCyjpVohwe6mshKc-XH6XMWw",
+      "title": "Montu Vadoliya",
+      "thumb": "https://yt3.ggpht.com/D0z16JejTYYkR3mFviCoqKGiDO88gyyHz6rMFCLNt7dulrzDziJZ2XqzIi60_PHKIGo-0DDf=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UUyjpVohwe6mshKc-XH6XMWw",
+      "subs": 65800,
+      "category": "tech",
+      "addedAt": "2026-11-23T10:18:01.087Z"
+    },
+    "UCUb0um43yYe6CbgNATbVLjg": {
+      "channelId": "UCUb0um43yYe6CbgNATbVLjg",
+      "title": "LANKA MUZAMMIL ",
+      "thumb": "https://yt3.ggpht.com/QwnWZ9C9YXujeyFxPXRP2ERa3t-JKb6nYAUAnJKbAjlMqcfa1zi4P_lYEogTH9LmWsZPnZl6aA=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UUUb0um43yYe6CbgNATbVLjg",
+      "subs": 348000,
+      "category": "tech",
+      "addedAt": "2026-11-23T10:18:01.087Z"
     }
   }
 }

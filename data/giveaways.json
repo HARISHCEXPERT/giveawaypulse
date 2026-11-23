@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-23T10:17:03.952Z",
-  "channelsTracked": 12,
+  "updatedAt": "2026-11-23T10:18:01.088Z",
+  "channelsTracked": 14,
   "items": [
     {
       "videoId": "XfhQPUI_jyw",
@@ -265,6 +265,36 @@
       "status": "active"
     },
     {
+      "videoId": "RMdN7ko5gsY",
+      "url": "https://www.youtube.com/watch?v=RMdN7ko5gsY",
+      "title": "Mrbeast  Give U Iphone18😱 #shorts",
+      "channel": "IMR Pamo",
+      "channelId": "UCYqjUS2IFs06wAc3jq5DtFg",
+      "channelThumb": "https://yt3.ggpht.com/MFnFKHg7bL7rwLU_bGCnPgzkYiaWneloJ9Y41zlXLjBt7DZLaWR0ttL_x7iLB2HLgWQ229-qaw=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 301,
+      "verifiedChannel": false,
+      "category": "tech",
+      "thumb": "https://i.ytimg.com/vi/RMdN7ko5gsY/hqdefault.jpg",
+      "publishedAt": "2026-11-22T10:09:34Z",
+      "endDate": null,
+      "howTo": [
+        "😱 Would You Destroy Your Phone to Win a Brand New iPhone 17? 📱🔥",
+        "MrBeast Challenge is here! 🤯 Complete the challenge and get a chance to win an amazing iPhone 17!",
+        "🇮🇳 India 🇵🇰 Pakistan — Comment below!"
+      ],
+      "isShort": true,
+      "score": 5,
+      "confidence": "review",
+      "resultVideo": false,
+      "hits": [
+        "desc:\\bgive\\s?-?aways?\\b",
+        "desc:\\bwin\\s+(a|an|this|free|the)\\b",
+        "sup:\\bcomment\\b.*\\b(below|karo|kare|kijiye)\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
       "videoId": "hFG_d3wP_0s",
       "url": "https://www.youtube.com/watch?v=hFG_d3wP_0s",
       "title": "Whatever Car You Steal, I'll Pay For! in Hindi | Mr Beast Hindi 🔥 ",
@@ -287,6 +317,58 @@
         "desc:\\bcontest\\b",
         "sup:\\bwinners?\\b",
         "sup:\\bprize\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
+      "videoId": "UOqwgWMXRvo",
+      "url": "https://www.youtube.com/watch?v=UOqwgWMXRvo",
+      "title": "Sheru Bhai Ka iPhone 18 Pro Max Giveaway 😱 | Like Subscribe Karo#giveawayindia #shortvideo",
+      "channel": "Toon Bunk",
+      "channelId": "UCZqhjDocjNdGIJUVErYcO0g",
+      "channelThumb": "https://yt3.ggpht.com/Q9jZfTBVLeTgBVLqDZeQ-YTb_Caagx5M_v7q3tk6OFa9tlNntg1KRlRCY7MtB70ymX8NU0xm8A=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 150,
+      "verifiedChannel": false,
+      "category": "tech",
+      "thumb": "https://i.ytimg.com/vi/UOqwgWMXRvo/hqdefault.jpg",
+      "publishedAt": "2026-11-22T02:00:07Z",
+      "endDate": null,
+      "howTo": [
+        "Winner ka naam isi channel par aayega. To jaldi karo!",
+        "#sherubhai #iphone18promax #giveaway"
+      ],
+      "isShort": true,
+      "score": 5,
+      "confidence": "review",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b",
+        "sup:\\bwinners?\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
+      "videoId": "-AWgT_FDBJo",
+      "url": "https://www.youtube.com/watch?v=-AWgT_FDBJo",
+      "title": "GTA 6 FREE GIVEAWAY | GTA 6 Play on PS5 PRO | Hindi Live Streaming #4 | #namokarlive",
+      "channel": "NamokaR GaminG WorlD",
+      "channelId": "UCLS3ByiPFbVN7x_6LGnGcxA",
+      "channelThumb": "https://yt3.ggpht.com/ytc/AIdro_khMibcehMOtmFLgdZCXQaBZ8L8LziLOx-xbuXkLKSWPw=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 98600,
+      "verifiedChannel": true,
+      "category": "gaming",
+      "thumb": "https://i.ytimg.com/vi/-AWgT_FDBJo/hqdefault.jpg",
+      "publishedAt": "2026-11-21T21:19:52Z",
+      "endDate": null,
+      "howTo": [],
+      "isShort": false,
+      "score": 4,
+      "confidence": "high",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b"
       ],
       "notified": false,
       "status": "active"
@@ -324,6 +406,37 @@
       "status": "active"
     },
     {
+      "videoId": "i4kw7I_ynvs",
+      "url": "https://www.youtube.com/watch?v=i4kw7I_ynvs",
+      "title": "🔴 Free Fire LIVE Pakistan 🇵🇰 |LIVE GIVEAWAY CUSTOMS & REACTION | DYNXZ FF IS LIVE | Road To 3K",
+      "channel": "Dynxz FF",
+      "channelId": "UCcZ4mJP2A5P0qs2eeKomeng",
+      "channelThumb": "https://yt3.ggpht.com/EAl9NHbqNmRsh_vNChx_nxmt5QqRbgNRq_2SSiL__iMK9NMU1gD1h9UW8D5M6iiJPD0vSZ_VcwM=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 2220,
+      "verifiedChannel": false,
+      "category": "gaming",
+      "thumb": "https://i.ytimg.com/vi/i4kw7I_ynvs/hqdefault.jpg",
+      "publishedAt": "2026-11-21T14:54:03Z",
+      "endDate": null,
+      "howTo": [
+        "🔴 Free Fire LIVE Pakistan 🇵🇰 |LIVE GIVEAWAY CUSTOMS & REACTION | DYNXZ FF IS LIVE | Road To 3K",
+        "free fire,total gaming,phone giveaway winner,desi gamer,amit bhai,",
+        "free fire live giveaway,garena free fire,gyan gaming,tonde gamer,desi chhora_yt,",
+        "free fire india,two side gamers,star gamers,iphone giveaway,free fire live,free fire videos,",
+        "free fire video,ungraduate gamer,free fire live diamonds giveaway,y"
+      ],
+      "isShort": false,
+      "score": 5,
+      "confidence": "review",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b",
+        "sup:\\bwinners?\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
       "videoId": "KmrGGnJXmf0",
       "url": "https://www.youtube.com/watch?v=KmrGGnJXmf0",
       "title": "GTA V Ka Aakhri Tohfa 🎁💔 #gta5",
@@ -348,6 +461,35 @@
         "desc:\\bgive\\s?-?aways?\\b",
         "sup:\\bwinners?\\b",
         "sup:\\blast\\s+date\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
+      "videoId": "iCCzvNpaDrA",
+      "url": "https://www.youtube.com/watch?v=iCCzvNpaDrA",
+      "title": "SUNDAY LIVE! FREE PS5 + GTA 6 GIVEAWAY",
+      "channel": "Mumbai Gamer Raunax",
+      "channelId": "UCldScWaC5wcLM-xrS2YmWxw",
+      "channelThumb": "https://yt3.ggpht.com/ytc/AIdro_lmi-Xk9SSx8cCzsBfKur6HlWDJ2MvO1ToMPfr7Ujnu8_E=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 478000,
+      "verifiedChannel": true,
+      "category": "gaming",
+      "thumb": "https://i.ytimg.com/vi/iCCzvNpaDrA/hqdefault.jpg",
+      "publishedAt": "2026-11-21T13:28:40Z",
+      "endDate": null,
+      "howTo": [
+        "🔥 SUNDAY LIVE! FREE PS5 + GTA 6 GIVEAWAY 🎁",
+        "This giveaway is not sponsored, endorsed or run by Instagram, YouTube, Sony or Rockstar Games.",
+        "#GTA6 #GTAVI #PS5Giveaway #Giveaway #GTA6Hindi #HindiGaming #MumbaiGamerRaunax #IndianGamer #LiveStream #PS5"
+      ],
+      "isShort": true,
+      "score": 8,
+      "confidence": "high",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b",
+        "title:\\bfree\\s+(iphone|phone|mobile|laptop|ps5)\\b"
       ],
       "notified": false,
       "status": "active"
@@ -409,6 +551,70 @@
       "status": "active"
     },
     {
+      "videoId": "zGhkTqe-V3Q",
+      "url": "https://www.youtube.com/watch?v=zGhkTqe-V3Q",
+      "title": "COMMENT & WIN iPHONE 16! 😱🎁 | GIVEAWAY ALERT 🔥 #Shorts",
+      "channel": "Montu Vadoliya",
+      "channelId": "UCyjpVohwe6mshKc-XH6XMWw",
+      "channelThumb": "https://yt3.ggpht.com/D0z16JejTYYkR3mFviCoqKGiDO88gyyHz6rMFCLNt7dulrzDziJZ2XqzIi60_PHKIGo-0DDf=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 65800,
+      "verifiedChannel": true,
+      "category": "tech",
+      "thumb": "https://i.ytimg.com/vi/zGhkTqe-V3Q/hqdefault.jpg",
+      "publishedAt": "2026-11-21T10:29:58Z",
+      "endDate": null,
+      "howTo": [
+        "Want to Win an iPhone 16? 😍📱",
+        "Don't Miss This Amazing iPhone 16 Giveaway!",
+        "Stay Tuned for the Lucky Winner Announcement! ❤️"
+      ],
+      "isShort": true,
+      "score": 10,
+      "confidence": "high",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b",
+        "desc:\\blucky\\s+winners?\\b",
+        "desc:\\bwin\\s+(a|an|this|free|the)\\b",
+        "sup:\\bwinners?\\b",
+        "sup:\\bannounce"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
+      "videoId": "VVSE7OK9nls",
+      "url": "https://www.youtube.com/watch?v=VVSE7OK9nls",
+      "title": "📱 iPhone 17 Mini FREE Giveaway 😱 3 Lucky Winners | Like, Subscribe & Comment #shorts #iphone17mini",
+      "channel": "RIHAN 亗 FF VIP ",
+      "channelId": "UCCVSzWq2ToNa2tvoXk3dEyw",
+      "channelThumb": "https://yt3.ggpht.com/CLoLAO00RDjpniloxNFmYpZFv3bdabMYrzXzFZ5kHSLOjD1w7Pt7oF-I3d5u5FQ6Y7cfEPv_7Q=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 14,
+      "verifiedChannel": false,
+      "category": "tech",
+      "thumb": "https://i.ytimg.com/vi/VVSE7OK9nls/hqdefault.jpg",
+      "publishedAt": "2026-11-21T10:14:31Z",
+      "endDate": null,
+      "howTo": [
+        "📱 iPhone 17 Mini FREE Giveaway 😱 3 Lucky Winners | Like, Subscribe & Comment 🔥",
+        "हमारे Giveaway में 3 Lucky Winners को मिलेगा शानदार iPhone! 🎉",
+        "शायद अगला Lucky Winner आप ही हों! ❤️",
+        "शायद अगला Lucky Winner आप ही हों! ❤️",
+        "#iPhone17Mini #Giveaway #FreeiPhone #LuckyWinner #iPhoneGiveaway #ViralShorts #YouTubeShorts #Trending #GiveawayIndia #Shorts"
+      ],
+      "isShort": true,
+      "score": 9,
+      "confidence": "review",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b",
+        "title:\\blucky\\s+winners?\\b",
+        "sup:\\bwinners?\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
       "videoId": "vcl_12mNnBQ",
       "url": "https://www.youtube.com/watch?v=vcl_12mNnBQ",
       "title": "70 हज़ार का PS5 अब ₹0 में 😱 | 5 PS5 Giveaway | GTA 6",
@@ -424,6 +630,34 @@
       "howTo": [
         "This giveaway is run by Level Unlock Hindi only. It is not sponsored, endorsed or administered by YouTube, Google, Sony or Rockstar Games. Fan channel. GTA VI images © Rockstar Games, used for commentary.",
         "#PS5Giveaway #GTA6 #GTA6Hindi #PS5 #Giveaway"
+      ],
+      "isShort": true,
+      "score": 4,
+      "confidence": "review",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
+      "videoId": "pcNsWconQd0",
+      "url": "https://www.youtube.com/watch?v=pcNsWconQd0",
+      "title": "100 दिन में iPhone खरीदने का सपना! 😍 पूरा हुआ तो सबको iPhone Giveaway 🎁 #viralvideo  1m views ",
+      "channel": "Momin village vlog",
+      "channelId": "UCwvyqNdsl5gn3wqVMIWuZ3Q",
+      "channelThumb": "https://yt3.ggpht.com/Z36KFIUWzF2PFXRn5ImM92bcrMFatJSPJJItDFZw9wOQEQFdYq3E1lLeIsilwFPrFxIQB3mc=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 59,
+      "verifiedChannel": false,
+      "category": "tech",
+      "thumb": "https://i.ytimg.com/vi/pcNsWconQd0/hqdefault.jpg",
+      "publishedAt": "2026-11-21T04:32:33Z",
+      "endDate": null,
+      "howTo": [
+        "100 दिन में iPhone खरीदने का सपना! 😍 पूरा हुआ तो सबको iPhone Giveaway 🎁",
+        "अगर मेरा यह सपना पूरा हो गया, तो मैं आप सभी के लिए iPhone Giveaway शुरू करूँगा। 🎁",
+        "#100DaysChallenge #iPhoneGiveaway #MyDream #DailyVlog #HindiVlog #MominVlog #DreamBig #Giveaway"
       ],
       "isShort": true,
       "score": 4,
@@ -480,6 +714,35 @@
       "isShort": true,
       "score": 4,
       "confidence": "review",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
+      "videoId": "hGUBjeFUSoI",
+      "url": "https://www.youtube.com/watch?v=hGUBjeFUSoI",
+      "title": "😱 आज मैं करने वाला हूँ बड़ा GIVEAWAY! 🎁 जीत सकते हो iPhone, Smartwatch और बहुत कुछ!",
+      "channel": "LANKA MUZAMMIL ",
+      "channelId": "UCUb0um43yYe6CbgNATbVLjg",
+      "channelThumb": "https://yt3.ggpht.com/QwnWZ9C9YXujeyFxPXRP2ERa3t-JKb6nYAUAnJKbAjlMqcfa1zi4P_lYEogTH9LmWsZPnZl6aA=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 348000,
+      "verifiedChannel": true,
+      "category": "tech",
+      "thumb": "https://i.ytimg.com/vi/hGUBjeFUSoI/hqdefault.jpg",
+      "publishedAt": "2026-11-21T01:30:14Z",
+      "endDate": null,
+      "howTo": [
+        "😱 आज मैं करने वाला हूँ बड़ा GIVEAWAY! 🎁 जीत सकते हो iPhone, Smartwatch और बहुत कुछ! ❤️",
+        "दोस्तों! ❤️ आज की वीडियो बहुत खास होने वाली है क्योंकि आज मैं करने वाला हूँ एक शानदार GIVEAWAY! 🎁🔥",
+        "आप सभी के लिए कुछ खास गिफ्ट लेकर आया हूँ। वीडियो को पूरा देखना और Giveaway में हिस्सा लेना मत भूलना।",
+        "#Giveaway #FreeGiveaway #YouTubeGiveaway #GiveawayIndia #Surprise #RCCLanka"
+      ],
+      "isShort": true,
+      "score": 4,
+      "confidence": "high",
       "resultVideo": false,
       "hits": [
         "title:\\bgive\\s?-?aways?\\b"
@@ -617,6 +880,30 @@
       "isShort": false,
       "score": 4,
       "confidence": "review",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
+    {
+      "videoId": "jrsEKQbGLUw",
+      "url": "https://www.youtube.com/watch?v=jrsEKQbGLUw",
+      "title": "GTA 6 FREE GIVEAWAY | GTA 6 Play on PS5 PRO | Hindi Live Streaming #2 | #namokarlive",
+      "channel": "NamokaR GaminG WorlD",
+      "channelId": "UCLS3ByiPFbVN7x_6LGnGcxA",
+      "channelThumb": "https://yt3.ggpht.com/ytc/AIdro_khMibcehMOtmFLgdZCXQaBZ8L8LziLOx-xbuXkLKSWPw=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 98600,
+      "verifiedChannel": true,
+      "category": "gaming",
+      "thumb": "https://i.ytimg.com/vi/jrsEKQbGLUw/hqdefault.jpg",
+      "publishedAt": "2026-11-19T22:30:39Z",
+      "endDate": null,
+      "howTo": [],
+      "isShort": false,
+      "score": 4,
+      "confidence": "high",
       "resultVideo": false,
       "hits": [
         "title:\\bgive\\s?-?aways?\\b"
@@ -771,6 +1058,36 @@
     "of9m0CyQnUU",
     "EpRQpo8c120",
     "rhLjOCkxmEg",
-    "6dCVuUhG0Os"
+    "6dCVuUhG0Os",
+    "B6fHDvT2FmU",
+    "iCCzvNpaDrA",
+    "pILcJekfzbI",
+    "WS9MlD1aFCU",
+    "APUgZShywuc",
+    "2ERpRqEWJmM",
+    "VZz32ZaZW3o",
+    "7cVMaVPJrGA",
+    "YRsMTDfx4kA",
+    "-AWgT_FDBJo",
+    "R5TQPnlc6v4",
+    "_WbUBa0N7_Q",
+    "jrsEKQbGLUw",
+    "Ou-SnHFMSCs",
+    "Lj6022gkHPM",
+    "clf478z4QcM",
+    "xBvmG1PbL3E",
+    "tceCjH6-xp4",
+    "RMdN7ko5gsY",
+    "AQj0XQAHnxs",
+    "R4tAB8y_7R4",
+    "UOqwgWMXRvo",
+    "i4kw7I_ynvs",
+    "lfiOTOYVXAw",
+    "U8XDxUY10fU",
+    "zGhkTqe-V3Q",
+    "VVSE7OK9nls",
+    "pcNsWconQd0",
+    "hGUBjeFUSoI",
+    "dfJz6TrCSgs"
   ]
 }
