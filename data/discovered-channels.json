@@ -1,4 +1,23 @@
 {
-  "queryIndex": 0,
-  "channels": {}
+  "queryIndex": 1,
+  "channels": {
+    "UCldScWaC5wcLM-xrS2YmWxw": {
+      "channelId": "UCldScWaC5wcLM-xrS2YmWxw",
+      "title": "Mumbai Gamer Raunax",
+      "thumb": "https://yt3.ggpht.com/ytc/AIdro_lmi-Xk9SSx8cCzsBfKur6HlWDJ2MvO1ToMPfr7Ujnu8_E=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UUldScWaC5wcLM-xrS2YmWxw",
+      "subs": 478000,
+      "category": "gaming",
+      "addedAt": "2026-11-23T10:17:03.948Z"
+    },
+    "UCLS3ByiPFbVN7x_6LGnGcxA": {
+      "channelId": "UCLS3ByiPFbVN7x_6LGnGcxA",
+      "title": "NamokaR GaminG WorlD",
+      "thumb": "https://yt3.ggpht.com/ytc/AIdro_khMibcehMOtmFLgdZCXQaBZ8L8LziLOx-xbuXkLKSWPw=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UULS3ByiPFbVN7x_6LGnGcxA",
+      "subs": 98600,
+      "category": "gaming",
+      "addedAt": "2026-11-23T10:17:03.948Z"
+    }
+  }
 }
