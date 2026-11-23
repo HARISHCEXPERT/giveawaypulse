@@ -55,7 +55,19 @@ const NEGATIVE = [
   /\bnot\s+a\s+giveaway\b/i, /\bfake\s+giveaways?\b/i, /\bscam\b/i, /\bgiveaway\s+scam\b/i,
 ];
 
-function scoreText(title = "", description = "") {
+const stripTags = t => String(t || "").replace(/#[\p{L}\p{N}_]+/gu, " ");   // "#giveaway" hashtag ko giveaway nahi maanenge
+
+// Sirf English/Hindi: dusri Indian scripts (Malayalam, Tamil, Telugu, Kannada, Bengali, Gujarati, Punjabi, Odia) wali video chhod do,
+// aur YouTube ne language "en"/"hi" ke alawa bataayi ho to bhi.
+const OTHER_SCRIPTS = /[\u0980-\u0D7F]/;
+function languageOk(snippet = {}) {
+  const lang = (snippet.defaultAudioLanguage || snippet.defaultLanguage || "").toLowerCase();
+  if (lang && !/^(en|hi)/.test(lang)) return false;
+  return !OTHER_SCRIPTS.test((snippet.title || "") + " " + (snippet.description || "").slice(0, 300));
+}
+
+function scoreText(rawTitle = "", rawDescription = "") {
+  const title = stripTags(rawTitle), description = stripTags(rawDescription);
   let score = 0;
   const hits = [];
   for (const re of STRONG) {
@@ -68,6 +80,8 @@ function scoreText(title = "", description = "") {
   const strongHit = hits.some(h => h.startsWith("title:") || h.startsWith("desc:"));
   const negative = NEGATIVE.some(re => re.test(title));
   const ended = ENDED.some(re => re.test(title) || re.test(description.slice(0, 400)));
+  // sirf description mein ek-aadh baar "giveaway" = kamzor; title mein ho to hi pakka
+  if (!hits.some(h => h.startsWith("title:")) && score < 4) score = 0;
   if (!strongHit || negative) score = 0;
   return { score, ended, hits };
 }
@@ -231,8 +245,8 @@ async function notifyNew(items) {
 
 // ---------- Discovery: naye channels khud dhoondhna ----------
 const DISCOVERY_QUERIES = [
-  "giveaway", "giveaway iphone", "jeeto", "free iphone giveaway", "giveaway hindi",
-  "gaming giveaway", "giveaway india", "phone giveaway", "laptop giveaway", "free fire giveaway",
+  "giveaway hindi", "iphone giveaway india", "phone giveaway hindi", "giveaway jeeto", "laptop giveaway india",
+  "gaming giveaway india", "ps5 giveaway india", "smartphone giveaway", "giveaway announcement hindi", "earbuds giveaway",
 ];
 const DISCOVERY_EVERY_HOURS = 2;  // har 2 ghante 1 search (100 units) => ~1,200 units/din
 const MIN_SUBS = 50000;           // isse kam subscribers = "Unverified"
@@ -340,6 +354,7 @@ async function main() {
   for (const v of details) {
     seenIds.add(v.id);
     const { title, description, publishedAt, thumbnails, channelTitle } = v.snippet;
+    if (!languageOk(v.snippet)) continue;
     const forced = overrides.approved.includes(v.id);
     const { score, ended, hits } = scoreText(title, description);
     if (!forced && score < 3) continue;
@@ -347,7 +362,7 @@ async function main() {
     const subs = ch.subs ?? null;
     const bigChannel = ch.manual || subs >= MIN_SUBS;
     // bada channel giveaway kar raha hai to use aage ke liye track list mein daal do
-    if (ch.discovered && bigChannel && !ended && !disc.channels[ch.channelId]) {
+    if (ch.discovered && bigChannel && !ended && hits.some(h => h.startsWith("title:")) && !disc.channels[ch.channelId]) {
       disc.channels[ch.channelId] = { ...ch, discovered: undefined, category: guessCategory(title + " " + ch.title), addedAt: new Date().toISOString() };
       added++;
     }
@@ -368,7 +383,7 @@ async function main() {
       howTo: keyLines(description),
       isShort: isShort(v.contentDetails?.duration),
       score,
-      confidence: forced ? "approved" : !bigChannel ? "review" : score >= 6 ? "high" : "review",
+      confidence: forced ? "approved" : !bigChannel ? "review" : score >= 5 || hits.some(h => h.startsWith("title:")) ? "high" : "review",
       resultVideo: ended,
       hits,
       notified: byId.get(v.id)?.notified || false,
@@ -406,4 +421,4 @@ async function main() {
 if (require.main === module) {
   main().catch(e => { console.error(e.message); process.exit(1); });
 }
-module.exports = { scoreText, keyLines, findEndDate, isShort, guessCategory };
+module.exports = { scoreText, keyLines, findEndDate, isShort, guessCategory, languageOk };
