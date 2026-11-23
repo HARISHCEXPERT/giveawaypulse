@@ -107,6 +107,7 @@ function pageHTML(slug, p, info, lang) {
 <html lang="${lang}">
 <head>
 <meta charset="utf-8">
+<meta name="google-adsense-account" content="ca-pub-7375517399950697">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(t.title(title))} | ${esc(NAME)}</title>
 <meta name="description" content="${esc(desc)}">

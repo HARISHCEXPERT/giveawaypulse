@@ -8,6 +8,11 @@ on:
       - "posts/**"          # naya giveaway page daalte hi turant ban jaye
       - "site-config.json"
   workflow_dispatch:        # GitHub par haath se bhi chala sakte ho
+    inputs:
+      discovery:
+        description: "Discovery (YouTube search) abhi chalao?"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -31,6 +36,7 @@ jobs:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           SITE_URL: ${{ vars.SITE_URL }}
+          FORCE_DISCOVERY: ${{ github.event.inputs.discovery == 'true' && '1' || '' }}
         run: node fetch.js
       - name: Build giveaway pages
         env:
