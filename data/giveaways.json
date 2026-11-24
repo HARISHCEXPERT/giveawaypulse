@@ -1,7 +1,38 @@
 {
-  "updatedAt": "2026-11-23T18:18:23.853Z",
-  "channelsTracked": 16,
+  "updatedAt": "2026-11-24T04:18:44.015Z",
+  "channelsTracked": 17,
   "items": [
+    {
+      "videoId": "HiGG54yzXjk",
+      "url": "https://www.youtube.com/watch?v=HiGG54yzXjk",
+      "title": "Real Laptop Giveaway Winner 😱 | KP Vlogs Won Laptop 💻 | Mahavir Computer Chikhli",
+      "channel": "Mahavir Computer",
+      "channelId": "UC8CZGyYiTcmJKQFk-yw3KKA",
+      "channelThumb": "https://yt3.ggpht.com/4J2EIB0aMj0r5SF6gKiR4e6oXsnWszMCebhFABMB0sRb6MTfp_Ar57VX-r2ROa3oZn486NCk=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 19,
+      "verifiedChannel": false,
+      "category": "tech",
+      "thumb": "https://i.ytimg.com/vi/HiGG54yzXjk/hqdefault.jpg",
+      "publishedAt": "2026-11-24T02:09:50Z",
+      "endDate": null,
+      "howTo": [
+        "Aaje finally ame declare kari didho REAL winner 🎉",
+        "KP Vlogs (@KP_vlogs.01) jeetyo che Laptop Giveaway ma 💻🔥",
+        "👉 100% genuine giveaway – koi fake nathi ❌",
+        "🏆 Winner ne personally laptop apyu",
+        "❤️ Tamaro support hase to aagal pan aava giveaways aavse"
+      ],
+      "isShort": true,
+      "score": 5,
+      "confidence": "review",
+      "resultVideo": false,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b",
+        "sup:\\bwinners?\\b"
+      ],
+      "notified": false,
+      "status": "active"
+    },
     {
       "videoId": "nrPrg3Cq4qQ",
       "url": "https://www.youtube.com/watch?v=nrPrg3Cq4qQ",
@@ -597,6 +628,41 @@
       ],
       "notified": false,
       "status": "active"
+    },
+    {
+      "videoId": "NXG8MIVe7ZY",
+      "url": "https://www.youtube.com/watch?v=NXG8MIVe7ZY",
+      "title": "Laptop Giveaway Winners Announced 🎉 | Lucky Draw Result 2026 | Smartphone, Smart TV & Oven Winners",
+      "channel": "Aarna Computers",
+      "channelId": "UCX_IuZJsU8JAerohpBE5TJw",
+      "channelThumb": "https://yt3.ggpht.com/NgTrl4dn2H_qA-g73DfJMts5WFzMBVYwhvdxUqrj5eB2ljRpv820s1iGehkbA2e-CGFPXlQM=s88-c-k-c0x00ffffff-no-rj",
+      "subs": 8400,
+      "verifiedChannel": false,
+      "category": "tech",
+      "thumb": "https://i.ytimg.com/vi/NXG8MIVe7ZY/hqdefault.jpg",
+      "publishedAt": "2026-11-22T11:56:42Z",
+      "endDate": null,
+      "howTo": [
+        "🎉 LUCKY DRAW WINNERS ANNOUNCED! 🎉",
+        "Finally, the wait is over! Our Lucky Draw Giveaway results are here, and we have 4 lucky winners who have won exciting prizes including a Laptop, Smartphone, Smart TV and Oven. 🎁🔥",
+        "🏆 Lucky Draw Winners:",
+        "🥇 Nischita — Laptop Winner",
+        "🥈 Bhojraj D N — Smartphone Winner"
+      ],
+      "isShort": true,
+      "score": 11,
+      "confidence": "review",
+      "resultVideo": true,
+      "hits": [
+        "title:\\bgive\\s?-?aways?\\b",
+        "desc:\\blucky\\s+winners?\\b",
+        "desc:\\bfree\\s+(iphone|phone|mobile|laptop|ps5)\\b",
+        "sup:\\bwinners?\\b",
+        "sup:\\bannounce",
+        "sup:\\bprize\\b"
+      ],
+      "notified": false,
+      "status": "ended"
     },
     {
       "videoId": "M6d-bU-eoRQ",
@@ -2037,6 +2103,19 @@
     "crZQ82ITJEk",
     "ji9jd0rYXcc",
     "rQVpr3RVcx8",
-    "aepL696vMUY"
+    "aepL696vMUY",
+    "TD6lpkpHuLI",
+    "kilKPSob1Es",
+    "1GbCbfyzwi4",
+    "7qUjgtgVm6A",
+    "hKqT6FIcsek",
+    "Ewp4OjQywH4",
+    "Xw-mhWe7ehc",
+    "9b6BH5-hpcY",
+    "YVkNZ8IZGVU",
+    "jdH9GLqBeRQ",
+    "HiGG54yzXjk",
+    "uYR9NOeR8E4",
+    "NXG8MIVe7ZY"
   ]
 }
