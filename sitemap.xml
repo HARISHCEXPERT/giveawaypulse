@@ -8,4 +8,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://giveawaypulse.com/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://giveawaypulse.com/hi/"/>
   </url>
+  <url><loc>https://giveawaypulse.com/creators/</loc></url>
+  <url><loc>https://giveawaypulse.com/creators/studio.html</loc></url>
+  <url><loc>https://giveawaypulse.com/about.html</loc></url>
+  <url><loc>https://giveawaypulse.com/privacy.html</loc></url>
 </urlset>
