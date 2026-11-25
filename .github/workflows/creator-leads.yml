@@ -1,0 +1,43 @@
+name: Creator leads (small giveaway creators)
+
+on:
+  workflow_dispatch:        # Actions tab -> "Creator leads" -> Run workflow
+    inputs:
+      max_subs:
+        description: "Max subscribers"
+        default: "50000"
+      min_subs:
+        description: "Min subscribers (0 = sab)"
+        default: "1000"
+      days:
+        description: "Kitne din purani giveaway videos tak"
+        default: "14"
+      searches:
+        description: "Kitni searches (har ek = 100 quota units, max 20)"
+        default: "6"
+
+permissions:
+  contents: read
+
+jobs:
+  leads:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Find creators
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          MAX_SUBS: ${{ github.event.inputs.max_subs }}
+          MIN_SUBS: ${{ github.event.inputs.min_subs }}
+          DAYS: ${{ github.event.inputs.days }}
+          SEARCHES: ${{ github.event.inputs.searches }}
+        run: node creator-leads.js
+      - name: Upload CSV
+        uses: actions/upload-artifact@v4
+        with:
+          name: creator-leads
+          path: leads/*.csv
+          retention-days: 14
