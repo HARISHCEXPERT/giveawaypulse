@@ -66,8 +66,28 @@ function fromItem(it) {
   };
 }
 function all() {
-  const postVids = new Set(S.posts.map(p => p.videoId));
-  return [...S.posts.map(fromPost), ...S.items.filter(i => !postVids.has(i.videoId)).map(fromItem)];
+  const postVids = new Set(S.posts.map(p => p.videoId).filter(Boolean));
+  const posts = S.posts.map(fromPost);
+  const videos = S.items.filter(i => !postVids.has(i.videoId)).map(fromItem);
+
+  // Repeated uploads/livestreams with the same creator and title should not
+  // flood the homepage. Keep the newest video, while preserving distinct titles.
+  const norm = value => String(value || "").toLowerCase()
+    .normalize("NFKC")
+    .replace(/https?:\\/\\/\\S+/g, " ")
+    .replace(/[^\\p{L}\\p{N}]+/gu, " ")
+    .trim();
+  const seen = new Set();
+  const uniqueVideos = videos
+    .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+    .filter(video => {
+      const key = norm(video.channel) + "::" + norm(video.title);
+      if (!key || key === "::" || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+  return [...posts, ...uniqueVideos];
 }
 
 // ---------- radar ----------
