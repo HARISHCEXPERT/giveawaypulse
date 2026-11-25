@@ -9,6 +9,8 @@
 <aside class="left"><a class="brand" href="../">Giveaway <span>Pulse</span></a><div class="pitch"><div class="eyebrow">Creator access</div><h1>Make your next giveaway easier to find.</h1><p>Sign in to manage your creator profile and get your giveaway details ready for a dedicated listing.</p><div class="bullets"><span><b>↗</b> A dedicated page for prize, rules and deadline</span><span><b>↗</b> A shareable link to your giveaway details</span><span><b>↗</b> A clear place for winner announcements</span></div></div><a class="back" href="./">← Back to creator overview</a></aside>
 <main class="right"><section class="box">
 <div id="loggedIn" class="hide"><h2>You're logged in</h2><p class="hint" id="whoami"></p><a class="submit" style="display:block;text-align:center;text-decoration:none" id="goNext" href="studio.html">Open Giveaway Studio →</a><button type="button" class="ghost" id="logoutBtn">Log out</button></div>
+<div id="checkMail" class="hide"><h2>Check your email</h2><p class="hint" id="checkMailText"></p><p class="hint">Click the link in that email to activate your account, then you’ll come straight back here. Can’t find it? Look in Spam/Promotions.</p><button type="button" class="ghost" id="backToLogin">Back to log in</button></div>
+<div id="resetArea" class="hide"><h2>Set a new password</h2><p class="hint">Choose a new password for your account.</p><form id="resetForm" novalidate><div class="field"><label for="newPw">New password</label><input id="newPw" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters"></div><div class="field"><label for="newPw2">Confirm new password</label><input id="newPw2" type="password" autocomplete="new-password" placeholder="Type it again"></div><button class="submit" id="resetSubmit" type="submit">Save password</button></form></div>
 <div id="authArea">
 <div class="switch"><button type="button" id="loginTab" class="active">Log in</button><button type="button" id="signupTab">Create account</button></div><h2 id="heading">Welcome back</h2><p class="hint" id="hint">Log in to open Giveaway Studio.</p>
 <div class="notice show demo" id="demoBox" style="margin:0 0 18px"><b>Just want to try it?</b><br>Email: <code>demo@pulse.test</code> · Password: <code>PulseDemo2026!</code><br><button type="button" class="link" id="useDemo">Fill demo login →</button></div>
@@ -19,10 +21,13 @@
 <div class="field"><label for="password">Password</label><div class="pw"><input id="password" name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="At least 8 characters"><button type="button" id="togglePw" aria-label="Show password">Show</button></div></div>
 <div class="field hide" id="confirmField"><label for="confirm">Confirm password</label><input id="confirm" name="confirm" type="password" autocomplete="new-password" placeholder="Type the password again"></div>
 <button class="submit" id="submit" type="submit">Log in</button>
-</form><div class="notice error" id="notice" role="alert"></div>
-<p class="legal">Preview: accounts are saved only in this browser (not on a server), so they won’t carry over to another device. Don’t reuse an important password.</p>
+<button type="button" class="link" id="forgot" style="display:block;margin:12px auto 0">Forgot password?</button>
+</form>
+<p class="legal" id="modeNote"></p>
 </div>
+<div class="notice error" id="notice" role="alert"></div>
 <p class="small">Need the details first? <a href="./">Explore creator benefits</a></p></section></main>
+<script src="../assets/config.js"></script>
 <script src="../assets/auth.js"></script>
 <script>
 (function(){
@@ -30,32 +35,47 @@ const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
 const next=GPAuth.safeNext(params.get('next'),'studio.html');
 let mode='login',busy=false;
-function showLoggedIn(s){ $('authArea').classList.add('hide'); $('loggedIn').classList.remove('hide'); $('whoami').textContent='Signed in as '+s.name+' ('+s.email+')'+(s.demo?' · demo account':''); $('goNext').href=next; }
-function showForm(){ $('loggedIn').classList.add('hide'); $('authArea').classList.remove('hide'); }
-function setMode(m){ mode=m; const su=m==='signup';
-  $('loginTab').classList.toggle('active',!su); $('signupTab').classList.toggle('active',su);
+const panels=['loggedIn','checkMail','resetArea','authArea'];
+function show(p){panels.forEach(x=>$(x).classList.toggle('hide',x!==p));}
+function showLoggedIn(s){show('loggedIn');$('whoami').textContent='Signed in as '+s.name+' ('+s.email+')'+(s.demo?' · demo account':'');$('goNext').href=next;}
+function setMode(m){mode=m;const su=m==='signup';
+  $('loginTab').classList.toggle('active',!su);$('signupTab').classList.toggle('active',su);
   $('heading').textContent=su?'Create your creator account':'Welcome back';
   $('hint').textContent=su?'Set up your creator profile to use Giveaway Studio.':'Log in to open Giveaway Studio.';
   ['nameField','channelField','confirmField'].forEach(f=>$(f).classList.toggle('hide',!su));
-  $('demoBox').classList.toggle('hide',su);
+  $('demoBox').classList.toggle('hide',su);$('forgot').classList.toggle('hide',su);
   $('password').autocomplete=su?'new-password':'current-password';
-  $('submit').textContent=su?'Create account':'Log in'; hideErr(); }
-function err(msg){ const n=$('notice'); n.textContent=msg; n.classList.remove('info'); n.classList.add('show'); }
-function hideErr(){ $('notice').classList.remove('show'); }
-$('loginTab').onclick=()=>setMode('login'); $('signupTab').onclick=()=>setMode('signup');
-$('togglePw').onclick=()=>{ const p=$('password'),show=p.type==='password'; p.type=show?'text':'password'; $('togglePw').textContent=show?'Hide':'Show'; };
-$('useDemo').onclick=()=>{ setMode('login'); $('email').value=GPAuth.demo.email; $('password').value=GPAuth.demo.password; $('submit').focus(); };
-$('logoutBtn').onclick=()=>{ GPAuth.logout(); showForm(); setMode('login'); };
-$('creatorForm').addEventListener('submit',async e=>{ e.preventDefault(); if(busy)return; hideErr();
-  const data={name:$('name').value,email:$('email').value,channel:$('channel').value,password:$('password').value};
-  if(mode==='signup'&&data.password!==$('confirm').value){ err('Passwords do not match.'); return; }
-  busy=true; $('submit').disabled=true; $('submit').textContent=mode==='signup'?'Creating account…':'Logging in…';
-  try{ mode==='signup'?await GPAuth.signup(data):await GPAuth.login(data); location.href=next; }
-  catch(x){ err(x.message||'Something went wrong. Try again.'); busy=false; $('submit').disabled=false; $('submit').textContent=mode==='signup'?'Create account':'Log in'; }
-});
-if(params.get('mode')==='signup') setMode('signup');
-const s=GPAuth.current(); if(s) showLoggedIn(s);
-if(params.get('from')==='studio'&&!s){ const n=$('notice'); n.textContent='Please log in or create an account to use Giveaway Studio.'; n.classList.add('show','info'); }
+  $('submit').textContent=su?'Create account':'Log in';hideMsg();}
+function msg(text,kind){const n=$('notice');n.textContent=text;n.classList.remove('info','error');n.classList.add('show',kind||'error');}
+function hideMsg(){$('notice').classList.remove('show');}
+function lock(btn,on,label){btn.disabled=on;if(label)btn.textContent=label;}
+$('modeNote').textContent=GPAuth.mode==='supabase'?'Your account is stored securely. Use a strong password you don’t use elsewhere.':'Preview: accounts are saved only in this browser for now, so they won’t carry over to another device.';
+$('loginTab').onclick=()=>setMode('login');$('signupTab').onclick=()=>setMode('signup');
+$('togglePw').onclick=()=>{const p=$('password'),sh=p.type==='password';p.type=sh?'text':'password';$('togglePw').textContent=sh?'Hide':'Show';};
+$('useDemo').onclick=()=>{setMode('login');$('email').value=GPAuth.demo.email;$('password').value=GPAuth.demo.password;$('submit').focus();};
+$('logoutBtn').onclick=async()=>{await GPAuth.logout();show('authArea');setMode('login');};
+$('backToLogin').onclick=()=>{show('authArea');setMode('login');};
+$('forgot').onclick=async()=>{hideMsg();try{await GPAuth.resetPassword($('email').value);msg('If an account exists for that email, a reset link is on its way. Check your inbox and spam.','info');}catch(x){msg(x.message);}};
+$('creatorForm').addEventListener('submit',async e=>{e.preventDefault();if(busy)return;hideMsg();
+  const d={name:$('name').value,email:$('email').value,channel:$('channel').value,password:$('password').value};
+  if(mode==='signup'&&d.password!==$('confirm').value){msg('Passwords do not match.');return;}
+  busy=true;lock($('submit'),true,mode==='signup'?'Creating account…':'Logging in…');
+  try{const r=mode==='signup'?await GPAuth.signup(d):await GPAuth.login(d);
+    if(r&&r.needsConfirm){show('checkMail');$('checkMailText').textContent='We sent a confirmation link to '+r.email+'.';}
+    else location.href=next;}
+  catch(x){msg(x.message||'Something went wrong. Try again.');}
+  busy=false;lock($('submit'),false,mode==='signup'?'Create account':'Log in');});
+$('resetForm').addEventListener('submit',async e=>{e.preventDefault();hideMsg();
+  if($('newPw').value!==$('newPw2').value){msg('Passwords do not match.');return;}
+  lock($('resetSubmit'),true,'Saving…');
+  try{await GPAuth.setNewPassword($('newPw').value);msg('Password updated. You are logged in.','info');const s=await GPAuth.current();if(s)showLoggedIn(s);}
+  catch(x){msg(x.message);}lock($('resetSubmit'),false,'Save password');});
+GPAuth.onRecovery(()=>show('resetArea'));
+if(params.get('mode')==='signup')setMode('signup');
+(async()=>{const s=await GPAuth.current();
+  if(params.get('mode')==='reset'&&/type=recovery/.test(location.hash)){show('resetArea');return;}
+  if(s)showLoggedIn(s);
+  else if(params.get('from')==='studio')msg('Please log in or create an account to use Giveaway Studio.','info');})();
 })();
 </script>
 </body></html>
