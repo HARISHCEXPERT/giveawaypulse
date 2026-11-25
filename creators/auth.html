@@ -27,8 +27,8 @@
 </div>
 <div class="notice error" id="notice" role="alert"></div>
 <p class="small">Need the details first? <a href="./">Explore creator benefits</a></p></section></main>
-<script src="../assets/config.js?v=1795599029"></script>
-<script src="../assets/auth.js?v=1795599029"></script>
+<script src="../assets/config.js?v=1795599532"></script>
+<script src="../assets/auth.js?v=1795599532"></script>
 <script>
 (function(){
 const $=id=>document.getElementById(id);
@@ -70,7 +70,7 @@ $('resetForm').addEventListener('submit',async e=>{e.preventDefault();hideMsg();
   lock($('resetSubmit'),true,'Saving…');
   try{await GPAuth.setNewPassword($('newPw').value);msg('Password updated. You are logged in.','info');const s=await GPAuth.current();if(s)showLoggedIn(s);}
   catch(x){msg(x.message);}lock($('resetSubmit'),false,'Save password');});
-GPAuth.onRecovery(()=>show('resetArea'));
+GPAuth.onRecovery(()=>show('resetArea')).catch(()=>{});
 if(params.get('mode')==='signup')setMode('signup');
 (async()=>{const s=await GPAuth.current();
   if(params.get('mode')==='reset'&&/type=recovery/.test(location.hash)){show('resetArea');return;}
