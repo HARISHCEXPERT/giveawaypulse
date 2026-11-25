@@ -6,6 +6,6 @@
  */
 window.GP_CONFIG = {
   youtubeApiKey: "AIzaSyCe5gqt-f2Md8vskhfZY4Bo9eY5MbfGShU",
-  supabaseUrl: "",      // e.g. "https://abcdxyz.supabase.co"
-  supabaseAnonKey: ""   // Project Settings -> API -> anon public
+  supabaseUrl: "https://gnetqwovpgikjtmybuhd.supabase.co",
+  supabaseAnonKey: "sb_publishable__JozPK-kEQL7a6EpSIYHKA_RcYfPV2R"  // publishable (public) key
 };
