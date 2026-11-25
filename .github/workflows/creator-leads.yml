@@ -15,6 +15,10 @@ on:
       searches:
         description: "Kitni searches (har ek = 100 quota units, max 20)"
         default: "6"
+      only_email:
+        description: "Sirf email wale channels?"
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -34,6 +38,7 @@ jobs:
           MIN_SUBS: ${{ github.event.inputs.min_subs }}
           DAYS: ${{ github.event.inputs.days }}
           SEARCHES: ${{ github.event.inputs.searches }}
+          ONLY_EMAIL: ${{ github.event.inputs.only_email }}
         run: node creator-leads.js
       - name: Upload CSV
         uses: actions/upload-artifact@v4

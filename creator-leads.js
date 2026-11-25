@@ -4,7 +4,9 @@
 //
 // Chalane ka tareeka:
 //   YT_API_KEY=xxxx node creator-leads.js
-//   Options (env): MAX_SUBS=50000 MIN_SUBS=1000 DAYS=14 SEARCHES=6
+//   Options (env): MAX_SUBS=50000 MIN_SUBS=1000 DAYS=14 SEARCHES=6 ONLY_EMAIL=1
+//   Email: channel description + giveaway videos ki poori description dono se nikalta hai.
+//   (YouTube ka "View email address" wala hidden email API se nahi milta.)
 //
 // Quota: har search = 100 units, channels.list = 1 unit / 50 channels.
 //   SEARCHES=6 => ~610 units. Hourly fetch.js ~7,000/day leta hai, to ek din mein 1–2 baar hi chalao.
@@ -18,6 +20,7 @@ const MAX_SUBS = +process.env.MAX_SUBS || 50000;
 const MIN_SUBS = process.env.MIN_SUBS === undefined || process.env.MIN_SUBS === "" ? 1000 : +process.env.MIN_SUBS;
 const DAYS = +process.env.DAYS || 14;
 const SEARCHES = Math.min(+process.env.SEARCHES || 6, 20);
+const ONLY_EMAIL = /^(1|true|yes)$/i.test(process.env.ONLY_EMAIL || "");
 const OUT_DIR = path.join(__dirname, "leads");
 
 const QUERIES = [
@@ -44,7 +47,8 @@ async function yt(endpoint, params) {
 const readJSON = (f, d) => { try { return JSON.parse(fs.readFileSync(f, "utf8")); } catch { return d; } };
 const csv = v => `"${String(v ?? "").replace(/"/g, '""').replace(/\r?\n/g, " ")}"`;
 const EMAIL_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
-const emailsIn = t => [...new Set((String(t || "").match(EMAIL_RE) || []).map(e => e.toLowerCase().replace(/\.$/, "")))];
+const JUNK_EMAIL = /\.(png|jpe?g|gif|webp|svg)$|@(example|domain|email)\.com$|^(noreply|no-reply)@/i;
+const emailsIn = t => [...new Set((String(t || "").match(EMAIL_RE) || []).map(e => e.toLowerCase().replace(/\.+$/, "")).filter(e => !JUNK_EMAIL.test(e)))];
 const GIVEAWAY_RE = /giveaway|give\s?away|giveway|jeeto|free\s+(iphone|phone|mobile|laptop)|winner/i;
 
 async function main() {
@@ -81,7 +85,7 @@ async function main() {
   }
 
   const ids = Object.keys(videosByChannel).filter(id => !known.has(id));
-  const leads = [];
+  let leads = [];
   for (let i = 0; i < ids.length; i += 50) {
     const r = await yt("channels", { part: "snippet,statistics", id: ids.slice(i, i + 50).join(",") });
     used += 1;
@@ -103,15 +107,38 @@ async function main() {
         latestGiveawayUrl: `https://youtu.be/${vids[0].id}`,
         latestGiveawayDate: vids[0].at.slice(0, 10),
         giveawayVideosFound: vids.length,
+        _id: c.id,
+        _vids: vids.map(v => v.id),
       });
     }
   }
+
+  // giveaway videos ki poori description se bhi email (search wali description kati hui hoti hai)
+  const videoIds = [...new Set(leads.flatMap(l => l._vids))];
+  const videoEmails = {};
+  for (let i = 0; i < videoIds.length; i += 50) {
+    try {
+      const r = await yt("videos", { part: "snippet", id: videoIds.slice(i, i + 50).join(",") });
+      used += 1;
+      for (const v of r.items || []) {
+        const found = emailsIn(v.snippet.description);
+        if (found.length) { const set = (videoEmails[v.snippet.channelId] ||= new Set()); found.forEach(e => set.add(e)); }
+      }
+    } catch (e) { console.warn(`! ${e.message}`); if (e.reason === "quotaExceeded") break; }
+  }
+  for (const l of leads) {
+    const fromChannel = l.email ? l.email.split(" ") : [];
+    const fromVideo = [...(videoEmails[l._id] || [])].filter(e => !fromChannel.includes(e));
+    l.email = [...fromChannel, ...fromVideo].join(" ");
+    l.emailSource = fromChannel.length && fromVideo.length ? "channel+video" : fromChannel.length ? "channel" : fromVideo.length ? "video" : "";
+  }
+  if (ONLY_EMAIL) leads = leads.filter(l => l.email);
 
   // email wale pehle, phir zyada subscribers wale
   leads.sort((a, b) => (!!b.email - !!a.email) || b.subs - a.subs);
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const cols = ["name", "subs", "email", "channelUrl", "latestGiveaway", "latestGiveawayUrl", "latestGiveawayDate", "giveawayVideosFound", "videos", "channelCreated", "country"];
+  const cols = ["name", "subs", "email", "emailSource", "channelUrl", "latestGiveaway", "latestGiveawayUrl", "latestGiveawayDate", "giveawayVideosFound", "videos", "channelCreated", "country"];
   const file = path.join(OUT_DIR, `creator-leads-${new Date().toISOString().slice(0, 10)}.csv`);
   // BOM taaki Excel Hindi naam sahi dikhaye
   fs.writeFileSync(file, "﻿" + [cols.join(","), ...leads.map(l => cols.map(c => csv(l[c])).join(","))].join("\n") + "\n");
@@ -121,6 +148,7 @@ async function main() {
     `## Creator leads (${MIN_SUBS.toLocaleString("en-IN")}–${MAX_SUBS.toLocaleString("en-IN")} subs, last ${DAYS} days)`,
     ``,
     `- Channels found: **${leads.length}** (${withEmail} with a public email in their description)`,
+    `- Filter: ${ONLY_EMAIL ? "only channels with an email" : "all channels"}`,
     `- Searches run: ${SEARCHES} · approx quota used: ${used} units`,
     `- Download the CSV from **Artifacts** at the bottom of this run.`,
     ``,
