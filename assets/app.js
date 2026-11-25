@@ -60,7 +60,7 @@ function fromPost(p) {
 }
 function fromItem(it) {
   return {
-    key: "v:" + it.videoId, kind: "video", title: it.title, channel: it.channel, thumb: it.thumb, endDate: it.endDate,
+    key: "v:" + it.videoId, kind: "video", title: it.title, channel: it.channel, channelId: it.channelId, thumb: it.thumb, endDate: it.endDate,
     status: it.status, category: it.category, videoId: it.videoId, href: it.url, external: true, date: it.publishedAt,
     subs: it.subs, verified: it.confidence !== "review", isShort: it.isShort, howTo: it.howTo || [],
   };
@@ -70,19 +70,21 @@ function all() {
   const posts = S.posts.map(fromPost);
   const videos = S.items.filter(i => !postVids.has(i.videoId)).map(fromItem);
 
-  // Repeated uploads/livestreams with the same creator and title should not
-  // flood the homepage. Keep the newest video, while preserving distinct titles.
+  // Remove duplicate video records by creator identity and normalized title.
+  // Keep the newest copy; creator IDs are more reliable than display names.
   const norm = value => String(value || "").toLowerCase()
     .normalize("NFKC")
-    .replace(/https?:\\/\\/\\S+/g, " ")
-    .replace(/[^\\p{L}\\p{N}]+/gu, " ")
+    .replace(/https?:\/\/\S+/g, " ")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
     .trim();
   const seen = new Set();
   const uniqueVideos = videos
     .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
     .filter(video => {
-      const key = norm(video.channel) + "::" + norm(video.title);
-      if (!key || key === "::" || seen.has(key)) return false;
+      const creator = video.channelId || norm(video.channel);
+      const title = norm(video.title);
+      const key = creator + "::" + title;
+      if (!creator || !title || seen.has(key)) return false;
       seen.add(key);
       return true;
     });
