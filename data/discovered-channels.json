@@ -1,5 +1,5 @@
 {
-  "queryIndex": 7,
+  "queryIndex": 8,
   "channels": {
     "UCldScWaC5wcLM-xrS2YmWxw": {
       "channelId": "UCldScWaC5wcLM-xrS2YmWxw",
@@ -144,6 +144,42 @@
       "subs": 315000,
       "category": "gaming",
       "addedAt": "2026-11-26T02:53:09.497Z"
+    },
+    "UCPMO6Hz4scserVsU8I61sUA": {
+      "channelId": "UCPMO6Hz4scserVsU8I61sUA",
+      "title": "Swarn music Hindi",
+      "thumb": "https://yt3.ggpht.com/vwB6WufDJfv4pAM9f3I9nF4kkTqYXWGjx5SYJ1ltnp92L308WmQo282fCUhQrhjziVjrsQMFhPA=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UUPMO6Hz4scserVsU8I61sUA",
+      "subs": 148000,
+      "category": "tech",
+      "addedAt": "2026-11-26T12:43:03.618Z"
+    },
+    "UCLu9EwNptPCWIDJeI_316wg": {
+      "channelId": "UCLu9EwNptPCWIDJeI_316wg",
+      "title": "Juliet ke vlogs",
+      "thumb": "https://yt3.ggpht.com/0owrxzGcRPjL4CG9FLxMKyd4x4c0f42cw-eQU7YlOKjUyZ5HoZrrPlY-EE_u7D9sA7shDbgW=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UULu9EwNptPCWIDJeI_316wg",
+      "subs": 395000,
+      "category": "tech",
+      "addedAt": "2026-11-26T12:43:03.618Z"
+    },
+    "UCGTmOHm1_SL-vqCU2LjKsGA": {
+      "channelId": "UCGTmOHm1_SL-vqCU2LjKsGA",
+      "title": "eSIM STUDIOS",
+      "thumb": "https://yt3.ggpht.com/2xt2eDVm6REH_I-FIo46sEqrrbY2Q0SDl4iL7a3M8uOSTQnAUe_hNSBM4Nk7UuU2djiiL5c7Zw=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UUGTmOHm1_SL-vqCU2LjKsGA",
+      "subs": 112000,
+      "category": "other",
+      "addedAt": "2026-11-26T12:43:03.618Z"
+    },
+    "UC-JaEBzpudxLC5uUTc8Nzgw": {
+      "channelId": "UC-JaEBzpudxLC5uUTc8Nzgw",
+      "title": "MaKinlee ASMR",
+      "thumb": "https://yt3.ggpht.com/zG4F_sgQ15scPUqG-1GPeYn6nX3jtVKcB_aurkwxIkJYP3u9mTNS_nm3df9lJ62dRVN-lzmg3A=s88-c-k-c0x00ffffff-no-rj",
+      "uploads": "UU-JaEBzpudxLC5uUTc8Nzgw",
+      "subs": 58200,
+      "category": "tech",
+      "addedAt": "2026-11-26T12:43:03.618Z"
     }
   }
 }
